@@ -172,3 +172,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* post-content */
+.post-content h2 {
+  @apply text-lg font-semibold my-2;
+}
+
+.post-content p {
+  @apply text-base font-semibold my-1;
+}

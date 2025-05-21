@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import Image from "next/image";
+import { navLinks } from "@/resources/static";
 
 const Header = () => {
   const { setTheme, theme } = useTheme();
@@ -30,14 +31,6 @@ const Header = () => {
     theme === "dark"
       ? "/images/amandeep-singh-text-light.svg"
       : "/images/amandeep-singh-text-dark.svg";
-
-  const navLinks = [
-    { id: 1, title: "My Work", path: "#" },
-    { id: 3, title: "Experience", path: "#experience" },
-    { id: 2, title: "Projects", path: "#projects" },
-    { id: 4, title: "Posts", path: "#posts" },
-    { id: 5, title: "Contact me", path: "#contact-me" },
-  ];
 
   return (
     <header>
@@ -57,51 +50,53 @@ const Header = () => {
             </Link>
           </h2>
 
-          <nav className="hidden md:block">
-            <ul className="flex item-center gap-1">
-              {navLinks.map(({ id, title, path }) => {
-                return (
-                  <li key={id}>
-                    <Button asChild variant={"ghost"}>
-                      <Link href={path}>{title}</Link>
-                    </Button>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-          <div className="flex items-center gap-2">
-            {/* theme toggle */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  Light
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  Dark
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
-                  System
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+          <div className="flex gap-4 items-center">
+            <nav className="hidden md:block">
+              <ul className="flex item-center gap-1">
+                {navLinks.map(({ id, title, path }) => {
+                  return (
+                    <li key={id}>
+                      <Button asChild variant={"ghost"}>
+                        <Link href={path}>{title}</Link>
+                      </Button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+            <div className="flex items-center gap-2">
+              {/* theme toggle */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                    <span className="sr-only">Toggle theme</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => setTheme("light")}>
+                    Light
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("dark")}>
+                    Dark
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("system")}>
+                    System
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-            <div className="flex lg:hidden">
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(true)}
-                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 cursor-pointer"
-              >
-                <span className="sr-only">Open main menu</span>
-                <AlignRight aria-hidden="true" className="size-6" />
-              </button>
+              <div className="flex lg:hidden">
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(true)}
+                  className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 cursor-pointer"
+                >
+                  <span className="sr-only">Open main menu</span>
+                  <AlignRight aria-hidden="true" className="size-6" />
+                </button>
+              </div>
             </div>
           </div>
 
