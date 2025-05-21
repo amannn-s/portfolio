@@ -36,13 +36,15 @@ const Header = () => {
 
           <nav className="hidden md:block">
             <ul className="flex item-center gap-1">
-              {navLinks.map(({ id, title, path }) => (
-                <li key={id}>
-                  <Button asChild variant={id === 1 ? "secondary" : "ghost"}>
-                    <Link href={path}>{title}</Link>
-                  </Button>
-                </li>
-              ))}
+              {navLinks.map(({ id, title, path }) => {
+                return (
+                  <li key={id}>
+                    <Button asChild variant={"ghost"}>
+                      <Link href={path}>{title}</Link>
+                    </Button>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
           <div className="flex items-center gap-2">

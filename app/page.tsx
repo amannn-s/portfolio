@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { ArrowRight, Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -222,28 +223,40 @@ function Projects() {
     <TracingBeam className="px-6">
       <div className="max-w-2xl px-4 mx-auto antialiased pt-4 relative">
         {projectsList.map((item, index) => (
-          <Card key={`content-${index}`} className="mb-10">
+          <Card key={`content-${index}`} className="mb-10 group">
             <CardHeader>
-              <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+              <h2 className="bg-secondary text-secondary-foreground rounded-full text-sm w-fit px-4 py-1">
                 {item.badge}
               </h2>
 
-              <p className={"text-xl mb-4"}>{item.title}</p>
+              <p className={"text-xl mb-2 text-primary"}>{item.title}</p>
             </CardHeader>
 
             <CardContent>
-              <div className="text-sm  prose prose-sm dark:prose-invert">
+              <div className="rounded-md relative overflow-hidden mb-6 ring-2 ring-accent">
                 {item?.image && (
-                  <img
+                  <Image
                     src={item.image}
                     alt="blog thumbnail"
-                    height="600"
-                    width="1000"
-                    className="rounded-lg mb-10 h-40 object-cover"
+                    height="1920"
+                    width="910"
+                    className="object-cover w-full aspect-[16/9] group-hover:scale-105 transition-all duration-400 opacity-80 group-hover:opacity-100"
                   />
                 )}
-                {item.description}
+                <div className="absolute bottom-3 translate-y-full -translate-x-1/2 rounded-lg left-1/2 w-[96%] bg-accent/90 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                  <div className="flex gap-1 md:gap-2 py-2 md:py-4 px-2 md:px-4 flex-wrap">
+                    {item.technologies.map((el, i) => (
+                      <span
+                        key={i}
+                        className="bg-accent text-sm md:text-base text-accent-foreground rounded-full px-2.5"
+                      >
+                        {el}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
+              <>{item.description}</>
             </CardContent>
           </Card>
         ))}
@@ -320,8 +333,15 @@ const projectsList = [
       </>
     ),
     badge: "Project #1",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/datadrix-ss.png",
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
+    ],
   },
   {
     title: "PehlaPanna - Mass Media Web App",
@@ -336,8 +356,15 @@ const projectsList = [
       </>
     ),
     badge: "Project #2",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/pehlapanna-ss.png",
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Cloudinary",
+      "Tailwind CSS",
+    ],
   },
   {
     title: "Connect - Social Media App",
@@ -352,8 +379,16 @@ const projectsList = [
       </>
     ),
     badge: "Project #3",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/datadrix-ss.png",
+    technologies: [
+      "React Native",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.io",
+      "Multer",
+    ],
   },
 ];
 
