@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AlignRight, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 
@@ -17,7 +17,19 @@ import Image from "next/image";
 
 const Header = () => {
   const { setTheme, theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true); // Avoid SSR mismatch
+  }, []);
+  if (!mounted) {
+    return null; // Or show a placeholder/skeleton
+  }
+  const logoSrc =
+    theme === "dark"
+      ? "/images/amandeep-singh-text-light.svg"
+      : "/images/amandeep-singh-text-dark.svg";
 
   const navLinks = [
     { id: 1, title: "My Work", path: "#" },
@@ -35,15 +47,12 @@ const Header = () => {
             <Link href={"/"}>
               <span className="sr-only">Amandeep Singh</span>
               <Image
-                src={
-                  theme === "dark"
-                    ? "/images/amandeep-singh-text-light.svg"
-                    : "/images/amandeep-singh-text-dark.svg"
-                }
+                src={logoSrc}
                 alt="Amandeep Singh logo"
                 width={200}
                 height={60}
                 priority
+                className="object-contain h-auto w-52"
               />
             </Link>
           </h2>
