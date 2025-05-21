@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,15 +10,28 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, ArrowUp, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 export default function Home() {
   return (
     <main>
+      <Button asChild variant={"outline"} className="fixed bottom-10 right-10">
+        <Link href={"#bio-section"}>
+          <ArrowUp />
+        </Link>
+      </Button>
       {/* Bio */}
-      <section className="py-10">
+      <motion.section
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="py-10"
+        id="bio-section"
+      >
         <div className="max-w-2xl px-4 mx-auto">
           <Card>
             <CardHeader className="flex justify-between">
@@ -25,8 +40,8 @@ export default function Home() {
                   Amandeep Singh
                 </CardTitle>
                 <CardDescription>
-                  <div className="flex text-lg items-center ">
-                    <Pin className="fill-neutral-400 size-4" />
+                  <div className="flex text-lg items-center text-primary">
+                    <Pin className="fill-primary size-4" />
                     Mayur Vihar, Delhi
                   </div>
                 </CardDescription>
@@ -64,10 +79,16 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </motion.section>
 
       {/* What I work with */}
-      <section className="py-10">
+      <motion.section
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="py-10"
+      >
         <div className="max-w-2xl px-4 mx-auto">
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">
             What I work with
@@ -76,9 +97,9 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-2">
             {skills.map((group) => {
               return (
-                <Card key={group.category} className="col-span-6">
+                <Card key={group.category} className="col-span-6 gap-2">
                   <CardHeader>
-                    <CardTitle className="text-lg font-semibold ">
+                    <CardTitle className="text-lg font-semibold text-primary">
                       {group.category}
                     </CardTitle>
                   </CardHeader>
@@ -99,10 +120,17 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience */}
-      <section className="py-10" id="experience">
+      <motion.section
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="py-10"
+        id="experience"
+      >
         <div className="max-w-2xl px-4 mx-auto">
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">Experience</h2>
 
@@ -127,18 +155,32 @@ export default function Home() {
             )}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects */}
-      <section className="py-10" id="projects">
+      <motion.section
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="py-10"
+        id="projects"
+      >
         <div className="max-w-2xl px-4 mx-auto">
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">Projects</h2>
         </div>
         <Projects />
-      </section>
+      </motion.section>
 
       {/* Posts */}
-      <section className="py-10" id="posts">
+      <motion.section
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="py-10"
+        id="posts"
+      >
         <div className="max-w-2xl px-4 mx-auto">
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">Posts</h2>
 
@@ -170,10 +212,17 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact */}
-      <section className="py-10" id="contact-me">
+      <motion.section
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="py-10"
+        id="contact-me"
+      >
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">Contact</h2>
           <p className="md:text-lg mb-6">
@@ -213,7 +262,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }

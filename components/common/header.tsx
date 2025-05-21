@@ -13,9 +13,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { Dialog, DialogPanel } from "@headlessui/react";
+import Image from "next/image";
 
 const Header = () => {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -31,7 +32,20 @@ const Header = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center px-4 py-6">
           <h2 className="font-semibold text-xl">
-            <Link href={"/"}>Amandeep Singh</Link>
+            <Link href={"/"}>
+              <span className="sr-only">Amandeep Singh</span>
+              <Image
+                src={
+                  theme === "dark"
+                    ? "/images/amandeep-singh-text-light.svg"
+                    : "/images/amandeep-singh-text-dark.svg"
+                }
+                alt="Amandeep Singh logo"
+                width={200}
+                height={60}
+                priority
+              />
+            </Link>
           </h2>
 
           <nav className="hidden md:block">
