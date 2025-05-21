@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { Moon, Sun } from "lucide-react";
+import React, { useState } from "react";
+import { AlignRight, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
@@ -12,9 +12,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
+import { Dialog, DialogPanel } from "@headlessui/react";
 
 const Header = () => {
   const { setTheme } = useTheme();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { id: 1, title: "My Work", path: "#" },
@@ -32,7 +34,7 @@ const Header = () => {
             <Link href={"/"}>Amandeep Singh</Link>
           </h2>
 
-          <nav>
+          <nav className="hidden md:block">
             <ul className="flex item-center gap-1">
               {navLinks.map(({ id, title, path }) => (
                 <li key={id}>
@@ -43,8 +45,8 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-
-          <div>
+          <div className="flex items-center gap-2">
+            {/* theme toggle */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -65,7 +67,62 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+
+            <div className="flex lg:hidden">
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(true)}
+                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 cursor-pointer"
+              >
+                <span className="sr-only">Open main menu</span>
+                <AlignRight aria-hidden="true" className="size-6" />
+              </button>
+            </div>
           </div>
+
+          {/* mobile */}
+          <Dialog
+            open={mobileMenuOpen}
+            onClose={setMobileMenuOpen}
+            className="block md:hidden"
+          >
+            <DialogPanel className="fixed inset-y-0 right-0 z-20 w-[75%] overflow-y-auto bg-background/20 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 backdrop-blur-2xl flex flex-col">
+              <div className="flex items-center justify-end">
+                <Button
+                  variant={"ghost"}
+                  size={"icon"}
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-m-2.5 cursor-pointer"
+                >
+                  <span className="sr-only">Close menu</span>
+                  <X aria-hidden="true" className="size-6" />
+                </Button>
+              </div>
+              <div className="mt-6 flow-root flex-col flex-1">
+                <div className="divide-y divide-gray-500/10 h-full">
+                  <ul className="h-full space-y-12 py-6 flex flex-col justify-center items-end">
+                    {navLinks.map(({ id, title, path }) => (
+                      <li
+                        key={id}
+                        className="hover:scale-110 hover:-translate-x-4 transition-all duration-200"
+                      >
+                        <Button
+                          asChild
+                          variant={id === 1 ? "link" : "link"}
+                          size={"lg"}
+                          className="text-lg"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <Link href={path}>{title}</Link>
+                        </Button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </DialogPanel>
+          </Dialog>
         </div>
       </div>
     </header>

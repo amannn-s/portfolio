@@ -180,24 +180,24 @@ export default function Home() {
             reach out.
           </p>
 
-          <div className="space-y-2 text-neutral-200 font-medium">
+          <div className="space-y-2 font-medium">
             <p>
               Email:{" "}
               <Link
                 href="mailto:aman230630@gmail.com"
                 className="text-primary hover:underline font-normal"
               >
-                your.email@example.com
+                aman230630@gmail.com
               </Link>
             </p>
             <p>
               LinkedIn:{" "}
               <Link
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/aman"
                 target="_blank"
                 className="text-primary hover:underline font-normal"
               >
-                linkedin.com/in/yourusername
+                linkedin.com/in/aman
               </Link>
             </p>
             <p>
@@ -237,7 +237,7 @@ function Projects() {
                   <img
                     src={item.image}
                     alt="blog thumbnail"
-                    height="500"
+                    height="600"
                     width="1000"
                     className="rounded-lg mb-10 h-40 object-cover"
                   />
