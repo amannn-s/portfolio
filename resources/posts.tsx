@@ -6,7 +6,7 @@ const post1 = {
   slug: "edtech-app-case-study",
   title: "How I Built a Full-Stack EdTech App",
   date: "May 10, 2025",
-  excerpt:
+  expert:
     "A breakdown of how I designed and developed Datadrix using MERN stack — covering features, structure, and lessons learned.",
   description:
     "Datadrix is a full-stack EdTech platform I built using the MERN stack. In this post, I walk through its architecture, key features, development approach, and the practical takeaways I gained from building it end-to-end.",
@@ -99,7 +99,7 @@ const post2 = {
   slug: "react-beginner-mistakes",
   title: "Top Mistakes Beginners Make in React",
   date: "April 28, 2025",
-  excerpt:
+  expert:
     "Common pitfalls I've seen while training students and how to avoid them with clean, maintainable React code.",
   description:
     "React is powerful, but beginners often stumble on common issues that slow down their progress. In this post, I break down the most frequent mistakes new React developers make—from poor state management to improper component structure—and share practical tips to write cleaner, more maintainable code.",
@@ -271,7 +271,7 @@ const post3 = {
   slug: "java-backend-usage",
   title: "Why I Still Use Java for Backend",
   date: "April 15, 2025",
-  excerpt:
+  expert:
     "Even with Node.js booming, here's why I still choose Java and Spring Boot for certain backend systems.",
   description:
     "Java may seem old-school compared to modern backend frameworks, but it's still my go-to for scalable, enterprise-grade applications. In this post, I share why Java and Spring Boot continue to be a reliable choice for critical systems.",
@@ -334,14 +334,122 @@ const post3 = {
   },
 };
 
-const posts = [post1, post2, post3];
+const post4 = {
+  id: 4,
+  slug: "frontend-roadmap",
+  title: "Recommended Road Map to Learn Frontend",
+  date: "May 23, 2025",
+  expert:
+    "A step-by-step frontend roadmap for beginners to become job-ready — from HTML to frameworks and advanced tooling.",
+  description:
+    "If you're just starting your frontend journey, this guide lays out a practical, structured path to follow. From the basics of HTML and CSS to React and modern build tools, here's what you need to focus on to grow from zero to confident frontend developer.",
+  content() {
+    return (
+      <article className="post-content max-w-none">
+        <p>
+          Whether you&apos;re switching careers or just starting out, frontend
+          development can seem overwhelming. Here&apos;s a step-by-step roadmap
+          to guide you through what to learn — in the right order — so you stay
+          focused and avoid burnout.
+        </p>
+
+        <h2>1. Learn the Fundamentals</h2>
+        <ul>
+          <li>
+            <strong>HTML:</strong> Understand basic tags (h1, h2, h3, h4, h5,
+            h6, p, span, a, ul, ol), semantic elements, forms, tables.
+          </li>
+          <li>
+            <strong>CSS:</strong> Selectors, units, colors, box model, flexbox,
+            grid, positioning, transitions, responsive design.
+          </li>
+          <li>
+            <strong>Basic JavaScript:</strong> Variables, conditional
+            statements, functions, arrays, objects, loops, DOM manipulation.
+          </li>
+        </ul>
+
+        <h2>2. Dive into Modern JavaScript (ES6+)</h2>
+        <ul>
+          <li>Arrow functions, destructuring, template literals</li>
+          <li>Async/await, promises, fetch API</li>
+          <li>Modules and import/export</li>
+        </ul>
+
+        <h2>3. Version Control</h2>
+        <p>
+          Learn how to use <strong>Git</strong> and <strong>GitHub</strong>.
+          It&apos;s essential for collaboration and managing your codebase.
+        </p>
+
+        <h2>4. Master a Frontend Framework</h2>
+        <p>
+          Start with <strong>React</strong> — the most popular library for
+          building user interfaces. Learn about components, props, state, and
+          lifecycle.
+        </p>
+
+        <h2>5. Style Your Projects</h2>
+        <ul>
+          <li>CSS-in-JS (e.g., styled-components)</li>
+          <li>
+            Utility-first frameworks like <strong>Tailwind CSS</strong>
+          </li>
+          <li>Component libraries like ShadCN or Material UI</li>
+        </ul>
+
+        <h2>6. Go Deeper with React</h2>
+        <ul>
+          <li>React Router</li>
+          <li>Context API, hooks like useEffect, useReducer</li>
+          <li>State management with contextApi, Redux</li>
+        </ul>
+
+        <h2>7. Tooling & Ecosystem</h2>
+        <ul>
+          <li>Package managers: npm, pnpm, yarn</li>
+          <li>Build tools: Vite, Webpack (basic concepts)</li>
+          <li>Code formatting: Prettier, ESLint</li>
+        </ul>
+
+        <h2>8. Build Projects</h2>
+        <p>
+          Nothing beats hands-on experience. Build a portfolio: a personal site,
+          a weather app, a blog, or clone popular UIs.
+        </p>
+
+        <h2>9. Learn Testing Basics</h2>
+        <ul>
+          <li>Jest for unit testing</li>
+          <li>React Testing Library for UI behavior</li>
+        </ul>
+
+        <h2>10. Explore Advanced Topics</h2>
+        <p>
+          Once you&apos;re confident, explore Next.js (React framework for
+          full-stack apps), performance optimization, accessibility (a11y), and
+          deploying apps with Vercel or Netlify.
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+          The frontend ecosystem is vast, but with a focused roadmap, you can
+          progress efficiently. Stick to the fundamentals, build consistently,
+          and refine your learning as you go. Good luck!
+        </p>
+      </article>
+    );
+  },
+};
+
+const posts = [post4, post3, post2, post1];
 
 export const getAllPost = () => {
   return posts;
 };
 
 export const getLatestPost = () => {
-  return posts.slice(posts.length - 3);
+  return posts.slice(0, 3);
 };
 
 export const getPostBySlug = (postSlug: ParamValue) => {

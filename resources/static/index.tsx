@@ -132,27 +132,3 @@ export const projectsList = [
     ],
   },
 ];
-
-export const posts = [
-  {
-    title: "How I Built a Full-Stack EdTech App",
-    date: "May 10, 2025",
-    slug: "edtech-app-case-study",
-    excerpt:
-      "A breakdown of how I designed and developed Datadrix using MERN stack — covering features, structure, and lessons learned.",
-  },
-  {
-    title: "Top Mistakes Beginners Make in React",
-    date: "April 28, 2025",
-    slug: "react-beginner-mistakes",
-    excerpt:
-      "Common pitfalls I’ve seen while training students and how to avoid them with clean, maintainable React code.",
-  },
-  {
-    title: "Why I Still Use Java for Backend",
-    date: "April 15, 2025",
-    slug: "java-backend-usage",
-    excerpt:
-      "Even with Node.js booming, here’s why I still choose Java and Spring Boot for certain backend systems.",
-  },
-];

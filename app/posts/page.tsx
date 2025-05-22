@@ -43,7 +43,7 @@ const AllPostsPage = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>{post.excerpt}</p>
+                  <p>{post.expert}</p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild variant={"outline"} size={"sm"}>

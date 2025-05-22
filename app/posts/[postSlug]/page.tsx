@@ -22,7 +22,10 @@ const AllPostsPage = () => {
               <CardTitle className="text-2xl font-bold">
                 {postDetails?.title}
               </CardTitle>
-              <CardDescription>{postDetails?.description}</CardDescription>
+              <p className="text-muted-foreground">{postDetails?.date}</p>
+              <CardDescription className="text-base">
+                {postDetails?.description}
+              </CardDescription>
             </CardHeader>
             <CardContent>{postDetails?.content()}</CardContent>
           </Card>
