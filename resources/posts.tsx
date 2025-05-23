@@ -442,7 +442,72 @@ const post4 = {
   },
 };
 
-const posts = [post4, post3, post2, post1];
+//Amisha's Blog...
+
+const post5 = {
+  id: 5,
+  slug: "things-i-wish-i-knew-before-mern",
+  title: "Things I Wish I Knew Before Starting the MERN Stack",
+  date: "May 24, 2025",
+  expert: "Lessons from a real MERN learner (Amisha)",
+  description:
+    "This post captures honest reflections and funny truths I discovered while learning MongoDB, Express, React, and Node. If you're just starting with MERN, read this before you dive in!",
+  content() {
+    return (
+      <article className="post-content max-w-none">
+        <p>
+          Learning the MERN stack is exciting, but here are a few things I wish
+          someone had told me earlier:
+        </p>
+
+        <h2>1. MongoDB isn’t just a database…</h2>
+        <p>
+          It’s schema-less and super flexible — but not always
+          beginner-friendly. Think of it like a magical diary that doesn’t
+          follow any rules.
+        </p>
+
+        <h2>2. Express feels easy — until middlewares come in.</h2>
+        <p>
+          “req, res, next” sounds simple, until you forget the ‘next()’ and your
+          server just hangs in silence.
+        </p>
+
+        <h2>3. React will make you feel smart and dumb… on the same day.</h2>
+        <p>
+          It’s amazing when it works. But when useEffect breaks or states loop —
+          good luck!
+        </p>
+
+        <h2>4. Node.js is powerful — and unforgiving.</h2>
+        <p>
+          One uncaught error and boom, your whole server crashes. Error handling
+          is a must.
+        </p>
+
+        <h2>5. Build before you're ready.</h2>
+        <p>
+          You’ll never “know enough.” The best way to learn is to build real
+          projects and mess things up.
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+          Don’t be scared. MERN is a powerful combo — just take it one bug at a
+          time. And remember, every confusion is part of your learning badge!
+        </p>
+
+        <h2> Build Projects & Keep Learning </h2>
+        <p>Don't stop after one project. Keep experimenting...</p>
+        <p>
+          <em>Written by Amisha Chaubey — a curious MERN stack learner. ✨</em>
+        </p>
+      </article>
+    );
+  },
+};
+
+const posts = [post5, post4, post3, post2, post1];
 
 export const getAllPost = () => {
   return posts;
