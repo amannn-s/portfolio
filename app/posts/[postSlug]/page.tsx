@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getPostBySlug } from "@/resources/posts";
-import { Calendar, Clock } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React from "react";
@@ -50,7 +50,7 @@ const AllPostsPage = () => {
                       target="_blank"
                       className="hover:underline"
                     >
-                      {post.author.name}
+                      {post?.author.name}
                     </Link>
                     <p className="text-neutral-600 dark:text-neutral-400">
                       {post?.author.role}
