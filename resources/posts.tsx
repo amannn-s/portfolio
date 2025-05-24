@@ -12,7 +12,7 @@ const post1: BlogPost = {
     bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
     role: "Java | MERN Stack Developer",
     avatar: "https://avatars.githubusercontent.com/u/201243131",
-    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+    social: "https://www.linkedin.com/in/amandeep-singh-it-developer",
   },
   expert:
     "A breakdown of how I designed and developed Datadrix using MERN stack — covering features, structure, and lessons learned.",
@@ -138,7 +138,7 @@ const post2: BlogPost = {
     bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
     role: "Java | MERN Stack Developer",
     avatar: "https://avatars.githubusercontent.com/u/201243131",
-    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+    social: "https://www.linkedin.com/in/amandeep-singh-it-developer",
   },
   expert:
     "Common pitfalls I've seen while training students and how to avoid them with clean, maintainable React code.",
@@ -345,7 +345,7 @@ const post3: BlogPost = {
     bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
     role: "Java | MERN Stack Developer",
     avatar: "https://avatars.githubusercontent.com/u/201243131",
-    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+    social: "https://www.linkedin.com/in/amandeep-singh-it-developer",
   },
   expert:
     "Even with Node.js booming, here's why I still choose Java and Spring Boot for certain backend systems.",
@@ -446,7 +446,7 @@ const post4: BlogPost = {
     bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
     role: "Java | MERN Stack Developer",
     avatar: "https://avatars.githubusercontent.com/u/201243131",
-    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+    social: "https://www.linkedin.com/in/amandeep-singh-it-developer",
   },
   expert:
     "A step-by-step frontend roadmap for beginners to become job-ready — from HTML to frameworks and advanced tooling.",
