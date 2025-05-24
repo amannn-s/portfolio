@@ -1,15 +1,49 @@
 import { CodeBlock } from "@/components/ui/code-block";
+import { BlogPost } from "@/types/BlogPost";
 import { ParamValue } from "next/dist/server/request/params";
 
-const post1 = {
+const post1: BlogPost = {
   id: 1,
   slug: "edtech-app-case-study",
   title: "How I Built a Full-Stack EdTech App",
   date: "May 10, 2025",
+  author: {
+    name: "Amandeep Singh",
+    bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
+    role: "Java | MERN Stack Developer",
+    avatar: "https://avatars.githubusercontent.com/u/201243131",
+    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+  },
   expert:
     "A breakdown of how I designed and developed Datadrix using MERN stack — covering features, structure, and lessons learned.",
   description:
     "Datadrix is a full-stack EdTech platform I built using the MERN stack. In this post, I walk through its architecture, key features, development approach, and the practical takeaways I gained from building it end-to-end.",
+  tags: [
+    "EdTech",
+    "MERN",
+    "Case Study",
+    "Full Stack",
+    "React",
+    "MongoDB",
+    "Node.js",
+  ],
+  estimatedReadTime: "4 min",
+  coverImage: "",
+  featured: false,
+  seo: {
+    title:
+      "Case Study: How I Built Datadrix, a Full-Stack EdTech App with MERN",
+    description:
+      "Discover how I built Datadrix, a full-stack EdTech application using the MERN stack. From features to architecture, here’s a full breakdown.",
+    keywords: [
+      "EdTech app case study",
+      "MERN stack project",
+      "build a full-stack app",
+      "MongoDB Express React Node",
+      "React case study",
+      "EdTech platform development",
+    ],
+  },
   content() {
     return (
       <article className="post-content max-w-none">
@@ -94,15 +128,48 @@ const post1 = {
   },
 };
 
-const post2 = {
+const post2: BlogPost = {
   id: 2,
   slug: "react-beginner-mistakes",
   title: "Top Mistakes Beginners Make in React",
   date: "April 28, 2025",
+  author: {
+    name: "Amandeep Singh",
+    bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
+    role: "Java | MERN Stack Developer",
+    avatar: "https://avatars.githubusercontent.com/u/201243131",
+    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+  },
   expert:
     "Common pitfalls I've seen while training students and how to avoid them with clean, maintainable React code.",
   description:
     "React is powerful, but beginners often stumble on common issues that slow down their progress. In this post, I break down the most frequent mistakes new React developers make—from poor state management to improper component structure—and share practical tips to write cleaner, more maintainable code.",
+  tags: [
+    "EdTech",
+    "MERN",
+    "Case Study",
+    "Full Stack",
+    "React",
+    "MongoDB",
+    "Node.js",
+  ],
+  estimatedReadTime: "4 min",
+  coverImage: "",
+  featured: false,
+  seo: {
+    title:
+      "Case Study: How I Built Datadrix, a Full-Stack EdTech App with MERN",
+    description:
+      "Discover how I built Datadrix, a full-stack EdTech application using the MERN stack. From features to architecture, here’s a full breakdown.",
+    keywords: [
+      "EdTech app case study",
+      "MERN stack project",
+      "build a full-stack app",
+      "MongoDB Express React Node",
+      "React case study",
+      "EdTech platform development",
+    ],
+  },
   content() {
     return (
       <article className="post-content max-w-none">
@@ -116,7 +183,7 @@ const post2 = {
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock1}
+          code={this.codeBlocks?.[0]}
         />
         <p>
           <strong>Fix:</strong> Always use the updater function when relying on
@@ -126,7 +193,7 @@ const post2 = {
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock2}
+          code={this.codeBlocks?.[1]}
         />
 
         <h2>2. Overusing useState Instead of useReducer</h2>
@@ -152,13 +219,13 @@ const post2 = {
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock3}
+          code={this.codeBlocks?.[2]}
         />
         <CodeBlock
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock4}
+          code={this.codeBlocks?.[3]}
         />
 
         <h2>4. Mixing Up Controlled and Uncontrolled Inputs</h2>
@@ -170,13 +237,13 @@ const post2 = {
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock5}
+          code={this.codeBlocks?.[4]}
         />
         <CodeBlock
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock6}
+          code={this.codeBlocks?.[5]}
         />
         <p>Stick with controlled components for predictability.</p>
 
@@ -201,13 +268,13 @@ const post2 = {
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock7}
+          code={this.codeBlocks?.[6]}
         />
         <CodeBlock
           language="jsx"
           filename="DummyComponent.jsx"
           highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlock8}
+          code={this.codeBlocks?.[7]}
         />
 
         <h2>7. Skipping Prop Validation or Type Safety</h2>
@@ -236,45 +303,80 @@ const post2 = {
       </article>
     );
   },
-  codeBlock1: `const [count, setCount] = useState(0);
+  codeBlocks: [
+    `const [count, setCount] = useState(0);
 
 const increment = () => {
   setCount(count + 1);
   setCount(count + 1); // This won't increase count by 2!
 };`,
-  codeBlock2: `setCount(prev => prev + 1);
+    `setCount(prev => prev + 1);
 setCount(prev => prev + 1);`,
-  codeBlock3: `// Bad
+    `// Bad
 {items.map((item, index) => (
   <div key={index}>{item}</div>
 ))}`,
-  codeBlock4: `// Better
+    `// Better
 {items.map(item => (
   <div key={item.id}>{item.name}</div>
 ))}`,
-  codeBlock5: `// Controlled
+    `// Controlled
 <input value={inputValue} onChange={e => setInputValue(e.target.value)} />`,
-  codeBlock6: `// Uncontrolled (avoid unless necessary)
+    `// Uncontrolled (avoid unless necessary)
 <input defaultValue="Hello" />`,
-  codeBlock7: `// Bad
+    `// Bad
 useEffect(() => {
   fetchData();
 }, []);`,
-  codeBlock8: `// Good
+    `// Good
 useEffect(() => {
   fetchData();
 }, [userId]);`,
+  ],
 };
 
-const post3 = {
+const post3: BlogPost = {
   id: 3,
   slug: "java-backend-usage",
   title: "Why I Still Use Java for Backend",
   date: "April 15, 2025",
+  author: {
+    name: "Amandeep Singh",
+    bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
+    role: "Java | MERN Stack Developer",
+    avatar: "https://avatars.githubusercontent.com/u/201243131",
+    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+  },
   expert:
     "Even with Node.js booming, here's why I still choose Java and Spring Boot for certain backend systems.",
   description:
     "Java may seem old-school compared to modern backend frameworks, but it's still my go-to for scalable, enterprise-grade applications. In this post, I share why Java and Spring Boot continue to be a reliable choice for critical systems.",
+  tags: [
+    "EdTech",
+    "MERN",
+    "Case Study",
+    "Full Stack",
+    "React",
+    "MongoDB",
+    "Node.js",
+  ],
+  estimatedReadTime: "4 min",
+  coverImage: "",
+  featured: false,
+  seo: {
+    title:
+      "Case Study: How I Built Datadrix, a Full-Stack EdTech App with MERN",
+    description:
+      "Discover how I built Datadrix, a full-stack EdTech application using the MERN stack. From features to architecture, here’s a full breakdown.",
+    keywords: [
+      "EdTech app case study",
+      "MERN stack project",
+      "build a full-stack app",
+      "MongoDB Express React Node",
+      "React case study",
+      "EdTech platform development",
+    ],
+  },
   content() {
     return (
       <article className="post-content max-w-none">
@@ -334,15 +436,48 @@ const post3 = {
   },
 };
 
-const post4 = {
+const post4: BlogPost = {
   id: 4,
   slug: "frontend-roadmap",
   title: "Recommended Road Map to Learn Frontend",
   date: "May 23, 2025",
+  author: {
+    name: "Amandeep Singh",
+    bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
+    role: "Java | MERN Stack Developer",
+    avatar: "https://avatars.githubusercontent.com/u/201243131",
+    social: "www.linkedin.com/in/amandeep-singh-it-developer",
+  },
   expert:
     "A step-by-step frontend roadmap for beginners to become job-ready — from HTML to frameworks and advanced tooling.",
   description:
     "If you're just starting your frontend journey, this guide lays out a practical, structured path to follow. From the basics of HTML and CSS to React and modern build tools, here's what you need to focus on to grow from zero to confident frontend developer.",
+  tags: [
+    "EdTech",
+    "MERN",
+    "Case Study",
+    "Full Stack",
+    "React",
+    "MongoDB",
+    "Node.js",
+  ],
+  estimatedReadTime: "4 min",
+  coverImage: "",
+  featured: false,
+  seo: {
+    title:
+      "Case Study: How I Built Datadrix, a Full-Stack EdTech App with MERN",
+    description:
+      "Discover how I built Datadrix, a full-stack EdTech application using the MERN stack. From features to architecture, here’s a full breakdown.",
+    keywords: [
+      "EdTech app case study",
+      "MERN stack project",
+      "build a full-stack app",
+      "MongoDB Express React Node",
+      "React case study",
+      "EdTech platform development",
+    ],
+  },
   content() {
     return (
       <article className="post-content max-w-none">
@@ -444,14 +579,46 @@ const post4 = {
 
 //Amisha's Blog...
 
-const post5 = {
+const post5: BlogPost = {
   id: 5,
   slug: "things-i-wish-i-knew-before-mern",
   title: "Things I Wish I Knew Before Starting the MERN Stack",
   date: "May 24, 2025",
+  author: {
+    name: "Amisha Chaubey",
+    role: "MERN Stack Developer",
+    bio: "A curious developer sharing real-world lessons from the MERN journey.",
+    avatar: "https://avatars.githubusercontent.com/u/208958322?v=4",
+    social: "https://www.linkedin.com/in/aameesaa-aryani-4b49b225b",
+  },
   expert: "Lessons from a real MERN learner (Amisha)",
   description:
     "This post captures honest reflections and funny truths I discovered while learning MongoDB, Express, React, and Node. If you're just starting with MERN, read this before you dive in!",
+  tags: [
+    "MERN",
+    "JavaScript",
+    "MongoDB",
+    "React",
+    "Node.js",
+    "Express",
+    "Beginner Tips",
+  ],
+  estimatedReadTime: "4 min",
+  coverImage: "",
+  featured: true,
+  seo: {
+    title: "Things I Wish I Knew Before Starting the MERN Stack",
+    description:
+      "Honest lessons and developer insights about the MERN stack. Learn what to expect before starting with MongoDB, Express, React, and Node.",
+    keywords: [
+      "MERN stack",
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "Beginner developer tips",
+    ],
+  },
   content() {
     return (
       <article className="post-content max-w-none">
@@ -460,23 +627,23 @@ const post5 = {
           someone had told me earlier:
         </p>
 
-        <h2>1. MongoDB isn’t just a database…</h2>
+        <h2>1. MongoDB isn&apos;t just a database…</h2>
         <p>
-          It’s schema-less and super flexible — but not always
-          beginner-friendly. Think of it like a magical diary that doesn’t
+          It&apos;s schema-less and super flexible — but not always
+          beginner-friendly. Think of it like a magical diary that doesn&apos;t
           follow any rules.
         </p>
 
         <h2>2. Express feels easy — until middlewares come in.</h2>
         <p>
-          “req, res, next” sounds simple, until you forget the ‘next()’ and your
-          server just hangs in silence.
+          “req, res, next” sounds simple, until you forget the
+          &lsquo;next()&rsquo;; and your server just hangs in silence.
         </p>
 
         <h2>3. React will make you feel smart and dumb… on the same day.</h2>
         <p>
-          It’s amazing when it works. But when useEffect breaks or states loop —
-          good luck!
+          It&apos;s amazing when it works. But when useEffect breaks or states
+          loop — good luck!
         </p>
 
         <h2>4. Node.js is powerful — and unforgiving.</h2>
@@ -485,20 +652,21 @@ const post5 = {
           is a must.
         </p>
 
-        <h2>5. Build before you're ready.</h2>
+        <h2>5. Build before you&apos;re ready.</h2>
         <p>
-          You’ll never “know enough.” The best way to learn is to build real
-          projects and mess things up.
+          You&apos;ll never “know enough.” The best way to learn is to build
+          real projects and mess things up.
         </p>
 
         <h2>Conclusion</h2>
         <p>
-          Don’t be scared. MERN is a powerful combo — just take it one bug at a
-          time. And remember, every confusion is part of your learning badge!
+          Don&apos;t be scared. MERN is a powerful combo — just take it one bug
+          at a time. And remember, every confusion is part of your learning
+          badge!
         </p>
 
         <h2> Build Projects & Keep Learning </h2>
-        <p>Don't stop after one project. Keep experimenting...</p>
+        <p>Don&apos;t stop after one project. Keep experimenting...</p>
         <p>
           <em>Written by Amisha Chaubey — a curious MERN stack learner. ✨</em>
         </p>

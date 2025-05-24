@@ -10,7 +10,7 @@ type CodeBlockProps = {
   highlightLines?: number[];
 } & (
   | {
-      code: string;
+      code?: string;
       tabs?: never;
     }
   | {

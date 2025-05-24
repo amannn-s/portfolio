@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -16,6 +15,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { experience, projectsList, skills } from "@/resources/static";
 import { getLatestPost } from "@/resources/posts";
+import PostCard from "@/components/shared/postCard";
 
 export default function HomePage() {
   return (
@@ -32,7 +32,7 @@ export default function HomePage() {
         transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
         viewport={{ once: true }}
         className="py-10"
-        id="bio-section"
+        id="hero"
       >
         <div className="max-w-2xl px-4 mx-auto">
           <Card>
@@ -195,29 +195,7 @@ export default function HomePage() {
 
           <div className="space-y-6">
             {getLatestPost().map((post) => (
-              <Card key={post.id} className="border-b pb-4">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm ">
-                    {post.date}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>{post.expert}</p>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant={"outline"} size={"sm"}>
-                    <Link
-                      href={`posts/${post.slug}`}
-                      className="text-primary text-sm hover:underline"
-                    >
-                      Read more <ArrowRight />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+              <PostCard key={post.id} post={post} />
             ))}
           </div>
         </div>
@@ -252,11 +230,11 @@ export default function HomePage() {
             <p>
               LinkedIn:{" "}
               <Link
-                href="https://linkedin.com/in/aman"
+                href="https://www.linkedin.com/in/amandeep-singh-it-developer/"
                 target="_blank"
                 className="text-primary hover:underline font-normal"
               >
-                linkedin.com/in/aman
+                linkedin.com/in/amandeep-singh-it-developer
               </Link>
             </p>
             <p>

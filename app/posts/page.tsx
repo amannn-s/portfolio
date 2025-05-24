@@ -1,18 +1,9 @@
 "use client";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+
 import React from "react";
 import { motion } from "motion/react";
 import { getAllPost } from "@/resources/posts";
+import PostCard from "@/components/shared/postCard";
 
 const AllPostsPage = () => {
   return (
@@ -33,29 +24,7 @@ const AllPostsPage = () => {
 
           <div className="space-y-6">
             {getAllPost().map((post) => (
-              <Card key={post.id} className="border-b pb-4">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm ">
-                    {post.date}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>{post.expert}</p>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant={"outline"} size={"sm"}>
-                    <Link
-                      href={`posts/${post.slug}`}
-                      className="text-primary text-sm hover:underline"
-                    >
-                      Read more <ArrowRight />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+              <PostCard key={post.id} post={post} />
             ))}
           </div>
         </div>
