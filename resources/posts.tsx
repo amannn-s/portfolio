@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CodeBlock } from "@/components/ui/code-block";
 import { BlogPost } from "@/types/BlogPost";
 import { ParamValue } from "next/dist/server/request/params";
@@ -673,6 +674,55 @@ const post5: BlogPost = {
       </article>
     );
   },
+};
+
+const post6: BlogPost = {
+  id: 6,
+  slug: "how-to-make-a-responsive-navbar",
+  title: "How to make a responsive navbar with tailwind css & Shadcn😎",
+  date: "May 25, 2025",
+  author: {
+    name: "Amandeep Singh",
+    bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
+    role: "Java | MERN Stack Developer",
+    avatar: "https://avatars.githubusercontent.com/u/201243131",
+    social: "https://www.linkedin.com/in/amandeep-singh-it-developer",
+  },
+  expert: "",
+  description: "",
+  tags: ["MERN", "React", "Shadcn", "Tailwind", "Nextjs", "Nextjs 15", "SSR"],
+  estimatedReadTime: "12 min",
+  coverImage: "",
+  featured: true,
+  seo: {
+    title: "",
+    description: "",
+    keywords: ["", ""],
+  },
+  content() {
+    return (
+      <article className="post-content max-w-none">
+        <h2>
+          How I create A Perfect Navbar for my Websites which is response too.
+        </h2>
+        <p>
+          First of all we need to create an array of links and sub menu(option)
+          which will be in our navbar.
+        </p>
+        <CodeBlock
+          language="jsx"
+          filename="constants/index.jsx"
+          highlightLines={[9, 13, 14, 18]}
+          code={this.codeBlocks?.[0]}
+        />
+      </article>
+    );
+  },
+  codeBlocks: [
+    `const navLinks = [
+    {id: 1, title: "Home", path: "#"},
+]`,
+  ],
 };
 
 const posts = [post5, post4, post3, post2, post1];

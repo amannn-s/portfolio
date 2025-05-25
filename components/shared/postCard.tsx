@@ -37,8 +37,18 @@ const PostCard = ({ post }: { post: BlogPost }) => {
         <p>{post.description}</p>
       </CardContent>
       <CardFooter>
-        <div className="w-full flex justify-between items-center">
-          <div className="flex gap-2 items-center">
+        <div className="w-full  gap-4 flex flex-col md:flex-row justify-start items-start md:justify-between ">
+          <div className="md:order-1">
+            <Button asChild variant={"outline"} size={"sm"}>
+              <Link
+                href={`posts/${post.slug}`}
+                className="text-primary text-sm hover:underline"
+              >
+                Read more <ArrowRight />
+              </Link>
+            </Button>
+          </div>
+          <div className="flex gap-2 md:order-0 items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post.author.avatar}
@@ -60,16 +70,6 @@ const PostCard = ({ post }: { post: BlogPost }) => {
                 {post.author.role}
               </p>
             </div>
-          </div>
-          <div>
-            <Button asChild variant={"outline"} size={"sm"}>
-              <Link
-                href={`posts/${post.slug}`}
-                className="text-primary text-sm hover:underline"
-              >
-                Read more <ArrowRight />
-              </Link>
-            </Button>
           </div>
         </div>
       </CardFooter>
