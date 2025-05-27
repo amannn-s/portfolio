@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CodeBlock } from "@/components/ui/code-block";
 import { BlogPost } from "@/types/BlogPost";
 import { ParamValue } from "next/dist/server/request/params";
@@ -677,10 +676,11 @@ const post5: BlogPost = {
 };
 
 const post6: BlogPost = {
-  id: 6,
-  slug: "how-to-make-a-responsive-navbar",
-  title: "How to make a responsive navbar with tailwind css & Shadcn😎",
-  date: "May 25, 2025",
+  id: 3,
+  slug: "ai-fullstack-job-2025-roadmap",
+  title:
+    "Fast-Track Your AI Full Stack Developer Job in 2025: A 12-Month Roadmap",
+  date: "May 27, 2025",
   author: {
     name: "Amandeep Singh",
     bio: "Full-stack developer with experience in MERN, React Native, and Java. I build web and mobile apps and am open to jobs and freelance work.",
@@ -688,44 +688,178 @@ const post6: BlogPost = {
     avatar: "https://avatars.githubusercontent.com/u/201243131",
     social: "https://www.linkedin.com/in/amandeep-singh-it-developer",
   },
-  expert: "",
-  description: "",
-  tags: ["MERN", "React", "Shadcn", "Tailwind", "Nextjs", "Nextjs 15", "SSR"],
-  estimatedReadTime: "12 min",
-  coverImage: "",
+  expert:
+    "A month-by-month action plan to help you become a job-ready AI-powered full stack web developer in 2025.",
+  description:
+    "Want a job as a full stack developer in 2025? This roadmap covers frontend, backend, AI integration, and monetization — all in 12 months. Whether you're starting from scratch or switching careers, this is your ultimate game plan.",
+  tags: [
+    "AI Developer",
+    "Full Stack",
+    "Job Roadmap",
+    "MERN",
+    "Next.js",
+    "React",
+    "FastAPI",
+    "OpenAI",
+    "Prompt Engineering",
+    "Python",
+    "Machine Learning",
+    "Career",
+    "Freelancing",
+  ],
+  estimatedReadTime: "5 min",
+  coverImage: "/blog/ai-fullstack-roadmap.jpg",
   featured: true,
   seo: {
-    title: "",
-    description: "",
-    keywords: ["", ""],
+    title: "2025 Roadmap to Get an AI Full Stack Developer Job Fast",
+    description:
+      "Step-by-step 12-month guide to become an AI-powered full stack web developer. Learn frontend, backend, ML, cloud, and land a job in 2025.",
+    keywords: [
+      "AI full stack job roadmap 2025",
+      "How to get web developer job 2025",
+      "AI in full stack development",
+      "Learn full stack with AI tools",
+      "Prompt engineering roadmap",
+      "Fastest way to get developer job",
+      "Next.js AI job strategy",
+      "Freelancing with AI tools",
+    ],
   },
   content() {
     return (
       <article className="post-content max-w-none">
-        <h2>
-          How I create A Perfect Navbar for my Websites which is response too.
-        </h2>
         <p>
-          First of all we need to create an array of links and sub menu(option)
-          which will be in our navbar.
+          Want to land a job as a full stack developer in 2025 — one who knows
+          both the web and AI? This guide breaks down a 12-month strategy that
+          blends web development, AI integration, and career growth. It&apos;s
+          not just about building projects, but building the right ones — fast.
         </p>
-        <CodeBlock
-          language="jsx"
-          filename="constants/index.jsx"
-          highlightLines={[9, 13, 14, 18]}
-          code={this.codeBlocks?.[0]}
-        />
+
+        <h2>🚀 Phase 1 (Months 1-3): Frontend + AI Basics</h2>
+        <p>
+          Your goal here is to become confident with core frontend skills and
+          start using AI tools that make you 2x more productive.
+        </p>
+        <ul className="list-disc ml-6">
+          <li>
+            <strong>HTML/CSS/JavaScript:</strong> Build 5+ real projects — like
+            landing pages, product clones, DOM games, and your personal
+            portfolio.
+          </li>
+          <li>
+            <strong>React/Next.js:</strong> Learn company-loved frameworks.
+            React is a must-have, and Next.js will prep you for building
+            ChatGPT-style plugins.
+          </li>
+          <li>
+            <strong>AI Tools:</strong> Use ChatGPT, Claude, and GitHub Copilot
+            to speed up learning. Learn prompt engineering (start with a free
+            crash course).
+          </li>
+          <li>
+            <strong>Deploy with AI:</strong> Integrate OpenAI&apos;s API into
+            one of your projects — a chatbot, content generator, or filter. Cost
+            is minimal (~$5).
+          </li>
+        </ul>
+
+        <h2>🧠 Phase 2 (Months 4-7): Backend + AI Integration</h2>
+        <p>
+          Now that you&apos;ve built UI muscle, it&apos;s time to connect the
+          backend and learn how AI is powered behind the scenes.
+        </p>
+        <ul className="list-disc ml-6">
+          <li>
+            <strong>Python + Node.js:</strong> Build REST APIs using Express
+            (Node.js) and FastAPI (Python). These are backend weapons of choice.
+          </li>
+          <li>
+            <strong>Vector Databases:</strong> Explore Pinecone or ChromaDB —
+            these store AI embeddings and enable things like personalized
+            recommendations.
+          </li>
+          <li>
+            <strong>Cloud & DevOps:</strong> Get hands-on with Docker, AWS, or
+            Azure. These skills are essential for scaling AI products and stand
+            out to recruiters.
+          </li>
+          <li>
+            <strong>Project Ideas:</strong> Sentiment analysis APIs, AI-powered
+            SaaS, resume analyzer — pick something useful and launch it.
+          </li>
+        </ul>
+
+        <h2>🤖 Phase 3 (Months 8-10): AI/ML Specialization</h2>
+        <p>
+          This is where you separate yourself from the average web dev by going
+          deep into AI/ML.
+        </p>
+        <ul className="list-disc ml-6">
+          <li>
+            <strong>Machine Learning:</strong> Start with TensorFlow or
+            scikit-learn. Build simple models like spam detectors,
+            recommendation engines, or text summarizers.
+          </li>
+          <li>
+            <strong>AI Ethics:</strong> Learn the basics of bias detection and
+            responsible AI. This will be huge for 2025 roles.
+          </li>
+          <li>
+            <strong>Freelancing:</strong> Build mini custom GPTs or AI
+            dashboards for small businesses. It counts as real-world experience!
+          </li>
+          <li>
+            <strong>Certifications:</strong> Aim for an AWS Machine Learning or
+            Google Cloud AI certification.
+          </li>
+        </ul>
+
+        <h2>💼 Phase 4 (Months 11-12): Monetize & Get Hired</h2>
+        <p>
+          You&apos;ve now built skills, projects, and credibility. Time to
+          showcase it and turn it into income.
+        </p>
+        <ul className="list-disc ml-6">
+          <li>
+            <strong>Build a SaaS:</strong> Launch an AI-powered product — an
+            analytics dashboard, writing tool, or GPT app. Even a small MVP
+            counts.
+          </li>
+          <li>
+            <strong>Job Strategy:</strong> Target AI-focused startups — 2025 is
+            booming with AI seed funding. If you&apos;ve freelanced, apply for
+            mid/senior roles.
+          </li>
+          <li>
+            <strong>Networking:</strong> Join Kaggle competitions, post your
+            projects on LinkedIn, and engage in AI Discord groups or forums.
+            Visibility matters.
+          </li>
+        </ul>
+
+        <h2>🎯 Final Thoughts</h2>
+        <p>
+          You don&apos;t need a CS degree to break into AI-powered web
+          development. All you need is focus, consistency, and a little bit of
+          AI to boost your speed.
+        </p>
+        <p>
+          Stick to this roadmap, document your journey, and keep building. By
+          the end of 12 months, you won&apos;t just be job-ready — you&apos;ll
+          be in demand.
+        </p>
+
+        <p>
+          <em>Written by Amandeep Singh — Full Stack Developer</em>
+        </p>
       </article>
     );
   },
-  codeBlocks: [
-    `const navLinks = [
-    {id: 1, title: "Home", path: "#"},
-]`,
-  ],
+
+  codeBlocks: [],
 };
 
-const posts = [post5, post4, post3, post2, post1];
+const posts = [post6, post5, post4, post3, post2, post1];
 
 export const getAllPost = () => {
   return posts;
