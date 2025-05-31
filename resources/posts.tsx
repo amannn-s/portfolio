@@ -577,7 +577,7 @@ const post4: BlogPost = {
   },
 };
 
-//Amisha's Blog...
+//Amisha's Blog...⬇️
 
 const post5: BlogPost = {
   id: 5,
@@ -859,7 +859,134 @@ const post6: BlogPost = {
   codeBlocks: [],
 };
 
-const posts = [post6, post5, post4, post3, post2, post1];
+//Amisha's blog... ⬇️
+
+const post7: BlogPost = {
+  id: 7,
+  slug: "why-frontend-feels-like-home",
+  title: "Why Frontend Development Feels Like Home: My Creative Escape in Code",
+  date: "June 1, 2025",
+  author: {
+    name: "Amisha Chaubey",
+    bio: "MERN stack learner sharing my journey, projects, and design experiments. I enjoy turning ideas into smooth UI and clean code.",
+    role: "MERN Stack Developer",
+    avatar: "https://avatars.githubusercontent.com/u/208958322?v=4",
+    social: "https://www.linkedin.com/in/aameesaa-aryani-4b49b225b",
+  },
+  expert:
+    "A beginner-friendly, personal journey into frontend development — how it became my favorite part of MERN, and why designing UI feels like digital creativity.",
+  description:
+    "For anyone starting MERN or struggling with frontend, this post is a friendly story about how frontend development became my comfort zone. I compare it to painting, talk about my first messy layout, and share tips for enjoying the process.",
+  tags: [
+    "Frontend Development",
+    "MERN Stack",
+    "UI Design",
+    "Beginner Journey",
+    "React",
+    "Tailwind",
+    "Creative Coding",
+    "Motivation",
+  ],
+  estimatedReadTime: "4 min",
+  coverImage: "/blog/frontend-feels-like-home.jpg",
+  featured: false,
+  seo: {
+    title: "Why Frontend Development Feels Like Home: A Beginner’s Perspective",
+    description:
+      "Frontend isn't just code — it's a creative space. Here's why I enjoy designing UI as a MERN learner, and what makes it feel like home.",
+    keywords: [
+      "Frontend development beginner story",
+      "Learning frontend with React",
+      "UI design for new developers",
+      "Creative frontend journey",
+      "MERN stack frontend experience",
+    ],
+  },
+  content() {
+    return (
+      <article className="post-content max-w-none">
+        <p>
+          There’s something oddly satisfying about turning a blank screen into a
+          clean, clickable, scrollable UI. As someone learning the MERN stack,
+          I’ve realized one thing: <strong>frontend development feels like home</strong>.
+        </p>
+
+        <h2>🎨 Like Painting With Code</h2>
+        <p>
+          When I first started coding, I didn’t expect to enjoy styling so much.
+          But soon, adjusting margins, choosing colors, and arranging components
+          became my favorite part. It felt like painting — only instead of brushes, I
+          had CSS and Tailwind.
+        </p>
+        <p>
+          Every div was a new stroke. Every layout challenge? A puzzle I wanted
+          to solve. I wasn't just building a website — I was designing an experience.
+        </p>
+
+        <h2>😅 My First Frontend Project Was... a Mess</h2>
+        <p>
+          My first webpage looked like a patchwork quilt — uneven fonts,
+          stretched images, weird spacing. But still, I felt proud. That “ugly
+          but functional” project gave me the confidence to keep going.
+        </p>
+        <p>
+          I think we all start that way. And that’s okay — messy beginnings are
+          part of creative growth.
+        </p>
+
+        <h2>🧩 What I Enjoy the Most</h2>
+        <ul className="list-disc ml-6">
+          <li>
+            <strong>Layout design:</strong> Flexbox, Grid — these are tools that
+            turn ideas into structure.
+          </li>
+          <li>
+            <strong>Animations:</strong> A little motion using Framer Motion or
+            CSS transitions makes everything feel alive.
+          </li>
+          <li>
+            <strong>Responsive UI:</strong> Making sure it looks good on both a
+            laptop and a phone is a fun challenge.
+          </li>
+        </ul>
+
+        <h2>🛠️ Tools I’ve Been Using</h2>
+        <ul className="list-disc ml-6">
+          <li><strong>React:</strong> For component-based architecture</li>
+          <li><strong>Tailwind CSS:</strong> For fast and clean styling</li>
+          <li><strong>Figma:</strong> For planning layout and inspiration</li>
+        </ul>
+
+        <h2>✨ A Quick Tip for New Frontend Learners</h2>
+        <p>
+          Don’t wait to become a design “expert.” Just start building. Clone a
+          website you like. Recreate a product page. Experiment with colors.
+          Slowly, your eye for design will improve.
+        </p>
+
+        <h2>🎯 Final Thoughts</h2>
+        <p>
+          Backend has its own power — but frontend gives me that instant
+          feedback, that feeling of <em>“I made this”</em>. Whether it's a login form or a
+          full dashboard, I enjoy making things look neat, usable, and a little
+          beautiful.
+        </p>
+        <p>
+          So if you're learning MERN like me and feel drawn to frontend, explore
+          it fully. Maybe — just like me — you’ll find that coding UI isn’t just
+          technical... it’s personal.
+        </p>
+
+        <p>
+          <em>Written by Amisha Chaubey — a curious MERN stack learner. ✨</em>
+        </p>
+      </article>
+    );
+  },
+};
+
+
+const posts = [post7,post6, post5, post4, post3, post2, post1];
 
 export const getAllPost = () => {
   return posts;
